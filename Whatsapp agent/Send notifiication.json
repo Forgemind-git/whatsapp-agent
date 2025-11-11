@@ -1,0 +1,95 @@
+{
+  "name": "Send notifiication",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "12nKMTNIZQ9vjIPeBVNcvf9vU8y9IWxBIwGUBR1TDLb0",
+          "mode": "list",
+          "cachedResultName": "Whatsapp Customer Agent",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12nKMTNIZQ9vjIPeBVNcvf9vU8y9IWxBIwGUBR1TDLb0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12nKMTNIZQ9vjIPeBVNcvf9vU8y9IWxBIwGUBR1TDLb0/edit#gid=0"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cf97d6fe-1fe9-4084-a70b-5aac0c457f8d",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "9i2RYFjd8rU9a4f8",
+          "name": "Google Sheets Contact Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "581877381684738",
+        "recipientPhoneNumber": "+918903964878",
+        "textBody": "=Customer Name: {{ $json.Name }}\nCustomer Mail ID: {{ $json.Email }}\nCustomer Enquiry purpose: {{ $json.Purpose }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "0eddd802-fdab-450f-aa02-dbd19a04c42f",
+      "name": "Send message",
+      "webhookId": "7861f905-68dc-4be1-ab0f-e7a8968940a2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "lL1GgrllRKYWJV0E",
+          "name": "WhatsApp account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "42be3a82-56f8-49e0-ad94-9ab91c2f7069",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "06109140a62dea529b2b0785c44ac542f843e14b83e6c0e2f1925a4b1d6ba673"
+  },
+  "id": "PjPuyLZv1dXjgu1k",
+  "tags": []
+}
