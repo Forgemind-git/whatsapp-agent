@@ -441,7 +441,7 @@
             {
               "id": "4c5b6c59-eaaa-474d-b4d1-3d05dde063c3",
               "leftValue": "={{ $json.messages[0].from }}",
-              "rightValue": "916383450870",
+              "rightValue": "{{number}}",
               "operator": {
                 "type": "string",
                 "operation": "equals",
@@ -490,14 +490,14 @@
           "contacts": [
             {
               "profile": {
-                "name": "Sathya Prakash"
+                "name": "{{name}}"
               },
-              "wa_id": "918903964878"
+              "wa_id": "91{{number}}"
             }
           ],
           "messages": [
             {
-              "from": "918903964878",
+              "from": "91{{number}}",
               "id": "wamid.HBgMOTE4OTAzOTY0ODc4FQIAEhgUM0I4QUZGMDNBMzJERUU1RUU0MkQA",
               "timestamp": "1762745531",
               "text": {
