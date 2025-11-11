@@ -46,7 +46,7 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "581877381684738",
-        "recipientPhoneNumber": "+918903964878",
+        "recipientPhoneNumber": "+91{{number}}",
         "textBody": "=Customer Name: {{ $json.Name }}\nCustomer Mail ID: {{ $json.Email }}\nCustomer Enquiry purpose: {{ $json.Purpose }}",
         "additionalFields": {}
       },
